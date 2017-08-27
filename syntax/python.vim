@@ -87,7 +87,7 @@ syn keyword pythonStatement	pass raise
 syn keyword pythonStatement	global assert
 syn keyword pythonStatement	lambda yield
 syn keyword pythonStatement	async await
-syn keyword pythonStatement	with nonlocal True False None
+syn keyword pythonStatement	with nonlocal
 syn keyword pythonStatement	def class nextgroup=pythonFunction skipwhite
 syn match   pythonFunction	"[a-zA-Z_][a-zA-Z0-9_]*" display contained
 syn keyword pythonRepeat	for while
@@ -95,6 +95,10 @@ syn keyword pythonConditional	if elif else
 syn keyword pythonImport	import from as
 syn keyword pythonException	try except finally
 syn keyword pythonOperator	and in is not or
+
+syn match   pythonSelf      "\(\W\|^\)\@<=self\(\.\=\)\@="
+syn keyword pythonBoolean   True False
+syn keyword pythonNone      None
 
 " Print keyword but only if not used as function
 syn match pythonStatement "\<print\>\((\|,\|*=\)\@!" display
@@ -258,6 +262,11 @@ else
   syn sync maxlines=200
 endif
 
+highlight pythonSelf ctermfg=196 guifg=#ff0000
+highlight pythonBoolean ctermfg=173
+highlight pythonNone ctermfg=173
+highlight pythonBuiltinFunc ctermfg=43
+
 if version >= 508 || !exists("did_python_syn_inits")
   if version <= 508
     let did_python_syn_inits = 1
@@ -312,7 +321,6 @@ if version >= 508 || !exists("did_python_syn_inits")
   HiLink pythonHexError		Error
 
   HiLink pythonBuiltinObj	Structure
-  HiLink pythonBuiltinFunc	Function
 
   HiLink pythonExClass	Structure
 
