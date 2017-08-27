@@ -49,7 +49,7 @@
 "    For fast machines:
 "       python_slow_sync
 "
-
+let python_highlight_all = 1
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
 if version < 600
@@ -99,6 +99,7 @@ syn keyword pythonOperator	and in is not or
 syn match   pythonSelf      "\(\W\|^\)\@<=self\(\.\=\)\@="
 syn keyword pythonBoolean   True False
 syn keyword pythonNone      None
+syntax match pythonOpSymbol "+\|-\|\*\|<\|>\|&\||\|==\|!\|\~\|%\|\.\|/\(/\|*\)\@!"")"
 
 " Print keyword but only if not used as function
 syn match pythonStatement "\<print\>\((\|,\|*=\)\@!" display
@@ -266,6 +267,7 @@ highlight pythonSelf ctermfg=196 guifg=#ff0000
 highlight pythonBoolean ctermfg=173
 highlight pythonNone ctermfg=173
 highlight pythonBuiltinFunc ctermfg=43
+highlight pythonOpSymbol ctermfg=51
 
 if version >= 508 || !exists("did_python_syn_inits")
   if version <= 508
