@@ -95,6 +95,7 @@ syn keyword pythonConditional	if elif else
 syn keyword pythonImport	import from as
 syn keyword pythonException	try except finally
 syn keyword pythonOperator	and in is not or
+syn keyword pythonPrintFunction print
 
 syn match   pythonSelf      "\(\W\|^\)\@<=self\(\.\=\)\@="
 syn keyword pythonBoolean   True False
@@ -107,7 +108,7 @@ syn match pythonOpSymbol "+\|-\|\*\|<\|>\|&\||\|==\|!\|\~\|%\|\.\|/\(/\|*\)\@!""
 syn match pythonKwargs /\i*\ze=[^=]/  display
 
 " Print keyword but only if not used as function
-syn match pythonStatement "\<print\>\((\|,\|*=\)\@!" display
+" syn match pythonStatement "\<print\>\((\|,\|*=\)\@!" display
 
 " Decorators (new in Python 2.4)
 syn match   pythonDecorator	"@" display nextgroup=pythonFunction skipwhite
@@ -274,6 +275,7 @@ highlight pythonNone ctermfg=173
 highlight pythonBuiltinFunc ctermfg=43
 highlight pythonOpSymbol ctermfg=51
 highlight pythonKwargs ctermfg=180
+highlight pythonPrintFunction ctermfg=202
 
 if version >= 508 || !exists("did_python_syn_inits")
   if version <= 508
