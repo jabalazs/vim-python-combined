@@ -242,6 +242,7 @@ if exists("python_highlight_exceptions") && python_highlight_exceptions != 0
 
   syn keyword pythonExClass	AssertionError AttributeError EOFError
   syn keyword pythonExClass	FloatingPointError GeneratorExit IOError
+  syn keyword pythonExClass	FileNotFoundError
   syn keyword pythonExClass	ImportError IndexError KeyError
   syn keyword pythonExClass	KeyboardInterrupt MemoryError NameError
   syn keyword pythonExClass	NotImplementedError OSError OverflowError
