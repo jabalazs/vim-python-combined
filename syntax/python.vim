@@ -227,7 +227,7 @@ if exists("python_highlight_builtins") && python_highlight_builtins != 0
   syn keyword pythonBuiltinfunc globals hasattr hash help hex id 
   syn keyword pythonBuiltinFunc	input int intern isinstance
   syn keyword pythonBuiltinFunc	issubclass iter len list locals long map max
-  syn keyword pythonBuiltinFunc	min object oct open ord pow property range
+  syn keyword pythonBuiltinFunc	min object oct open ord pow property range next
   syn keyword pythonBuiltinFunc	raw_input reduce reload repr
   syn keyword pythonBuiltinFunc reversed round set setattr
   syn keyword pythonBuiltinFunc	slice sorted staticmethod str sum super tuple
