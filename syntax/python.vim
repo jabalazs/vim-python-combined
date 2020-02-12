@@ -100,12 +100,12 @@ syn keyword pythonPrintFunction print
 syn match   pythonSelf      "\(\W\|^\)\@<=self\(\.\=\)\@="
 syn keyword pythonBoolean   True False
 syn keyword pythonNone      None
-syn match pythonOpSymbol "+\|-\|\*\|<\|>\|&\||\|==\|!\|\~\|%\|\.\|/\(/\|*\)\@!"")"
+syn match pythonOpSymbol "+=\?\|-=\?\|\*=\?\|<=\?\|>=\?\|&\||\|==\|!=\?\|\~\|%\|\.\|/=\?\(/\|*\)\@!"")"
 
 " Inspiration from
 " https://vi.stackexchange.com/questions/6731/vim-syntax-pattern-to-highlight-python-keyword-argument
 " syn region FCall start='\i*\w*(' end=')' contains=TOP keepend excludenl
-syn match pythonKwargs /\i*\ze=[^=]/  display
+syn match pythonKwargs "\i*\ze=[^=]"  display
 
 " Print keyword but only if not used as function
 " syn match pythonStatement "\<print\>\((\|,\|*=\)\@!" display
@@ -286,54 +286,54 @@ if version >= 508 || !exists("did_python_syn_inits")
     command -nargs=+ HiLink hi def link <args>
   endif
 
-  HiLink pythonStatement	Statement
-  HiLink pythonImport		Statement
-  HiLink pythonFunction		Function
-  HiLink pythonConditional	Conditional
-  HiLink pythonRepeat		Repeat
-  HiLink pythonException	Exception
-  HiLink pythonOperator		Operator
+  HiLink pythonStatement          Statement
+  HiLink pythonImport             Statement
+  HiLink pythonFunction           Function
+  HiLink pythonConditional        Conditional
+  HiLink pythonRepeat             Repeat
+  HiLink pythonException          Exception
+  HiLink pythonOperator           Operator
 
-  HiLink pythonDecorator	Define
+  HiLink pythonDecorator          Define
 
-  HiLink pythonComment		Comment
-  HiLink pythonCoding		Special
-  HiLink pythonRun		Special
-  HiLink pythonTodo		Todo
+  HiLink pythonComment            Comment
+  HiLink pythonCoding             Special
+  HiLink pythonRun                Special
+  HiLink pythonTodo               Todo
 
-  HiLink pythonError		Error
-  HiLink pythonIndentError	Error
-  HiLink pythonSpaceError	Error
+  HiLink pythonError              Error
+  HiLink pythonIndentError        Error
+  HiLink pythonSpaceError         Error
 
-  HiLink pythonString		String
-  HiLink pythonBString		String
-  HiLink pythonUniString	String
-  HiLink pythonRawString	String
-  HiLink pythonUniRawString	String
+  HiLink pythonString             String
+  HiLink pythonBString            String
+  HiLink pythonUniString          String
+  HiLink pythonRawString          String
+  HiLink pythonUniRawString       String
 
-  HiLink pythonEscape			Special
-  HiLink pythonBEscape			Special
-  HiLink pythonEscapeError		Error
-  HiLink pythonBEscapeError		Error
-  HiLink pythonUniEscape		Special
-  HiLink pythonUniEscapeError		Error
-  HiLink pythonUniRawEscape		Special
-  HiLink pythonUniRawEscapeError	Error
+  HiLink pythonEscape             Special
+  HiLink pythonBEscape            Special
+  HiLink pythonEscapeError        Error
+  HiLink pythonBEscapeError       Error
+  HiLink pythonUniEscape          Special
+  HiLink pythonUniEscapeError     Error
+  HiLink pythonUniRawEscape       Special
+  HiLink pythonUniRawEscapeError  Error
 
-  HiLink pythonStrFormat	Special
+  HiLink pythonStrFormat          Special
 
-  HiLink pythonDocTest		Special
-  HiLink pythonDocTest2		Special
+  HiLink pythonDocTest            Special
+  HiLink pythonDocTest2           Special
 
-  HiLink pythonNumber		Number
-  HiLink pythonHexNumber	Number
-  HiLink pythonFloat		Float
-  HiLink pythonOctalError	Error
-  HiLink pythonHexError		Error
+  HiLink pythonNumber             Number
+  HiLink pythonHexNumber          Number
+  HiLink pythonFloat              Float
+  HiLink pythonOctalError         Error
+  HiLink pythonHexError           Error
 
-  HiLink pythonBuiltinObj	Structure
+  HiLink pythonBuiltinObj         Structure
 
-  HiLink pythonExClass	Structure
+  HiLink pythonExClass            Structure
 
   delcommand HiLink
 endif
